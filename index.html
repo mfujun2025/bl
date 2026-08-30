@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>壁炉.cn — 专业壁炉制造与资讯平台</title>
+<meta name="description" content="壁炉.cn，专注壁炉制造与行业资讯，提供铸铁壁炉、燃气壁炉、电壁炉等产品，汇聚壁炉行业最新动态与选购指南。">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+/* ===== 全局变量与重置 ===== */
+:root {
+  --charcoal: #1A1815;
+  --charcoal-light: #2A2723;
+  --cream: #F5F0E8;
+  --cream-dark: #EDE6D8;
+  --flame: #C85A2A;
+  --flame-light: #E07A3F;
+  --flame-dark: #A04520;
+  --brown: #3D2E1F;
+  --warm-gray: #8A8278;
+  --warm-gray-light: #B5ADA1;
+  --white: #FFFFFF;
+  --font-display: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  --font-body: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.7;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===== 顶部导航 ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 24, 21, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(200, 90, 42, 0.2);
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 1px;
+}
+
+.nav-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-links a {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--warm-gray-light);
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--flame-light);
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--flame), var(--flame-light));
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--flame), var(--flame-dark));
+  color: var(--white) !important;
+  padding: 10px 24px !important;
+  border-radius: 2px;
+  font-weight: 500 !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(200, 90, 42, 0.4);
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-mobile-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--cream);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* ===== Hero 区 ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.55);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,24,21,0.7) 0%, rgba(26,24,21,0.3) 50%, rgba(200,90,42,0.15) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--flame-light);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--flame);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 900;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 24px;
+  max-width: 720px;
+}
+
+.hero-title em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--flame-light), #F0A050);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: clamp(16px, 2vw, 20px);
+  color: rgba(245, 240, 232, 0.8);
+  max-width: 560px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 2px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--flame), var(--flame-dark));
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(200, 90, 42, 0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(245, 240, 232, 0.4);
+}
+
+.btn-outline:hover {
+  border-color: var(--flame-light);
+  color: var(--flame-light);
+  background: rgba(200, 90, 42, 0.08);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(245, 240, 232, 0.5);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--flame), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* ===== 通用区块 ===== */
+.section {
+  padding: 100px 32px;
+}
+
+.section-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--flame);
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--flame);
+  opacity: 0.5;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 16px;
+  color: var(--warm-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== 产品中心 ===== */
+.products {
+  background: var(--cream);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(26, 24, 21, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(26, 24, 21, 0.06);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(26, 24, 21, 0.14);
+}
+
+.product-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--charcoal);
+  color: var(--cream);
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+}
+
+.product-info {
+  padding: 28px;
+}
+
+.product-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+
+.product-desc {
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.product-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.product-features span {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: var(--cream-dark);
+  color: var(--brown);
+  border-radius: 2px;
+}
+
+.product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--flame);
+  transition: gap 0.3s ease;
+}
+
+.product-link:hover {
+  gap: 10px;
+}
+
+.product-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== 工艺优势 ===== */
+.craft {
+  background: var(--charcoal);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+
+.craft::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(ellipse at right center, rgba(200, 90, 42, 0.1), transparent 70%);
+}
+
+.craft .section-title {
+  color: var(--cream);
+}
+
+.craft .section-desc {
+  color: var(--warm-gray-light);
+}
+
+.craft-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.craft-item {
+  padding: 36px 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  transition: all 0.4s ease;
+}
+
+.craft-item:hover {
+  background: rgba(200, 90, 42, 0.08);
+  border-color: rgba(200, 90, 42, 0.3);
+  transform: translateY(-4px);
+}
+
+.craft-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  color: var(--flame-light);
+}
+
+.craft-item h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--cream);
+}
+
+.craft-item p {
+  font-size: 14px;
+  color: var(--warm-gray-light);
+  line-height: 1.7;
+}
+
+/* ===== 关于我们 ===== */
+.about {
+  background: var(--cream);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(26, 24, 21, 0.15);
+}
+
+.about-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.about-image-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 20px 28px;
+  border-radius: 4px;
+  border-left: 3px solid var(--flame);
+}
+
+.about-image-badge .number {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--flame-light);
+  line-height: 1;
+}
+
+.about-image-badge .label {
+  font-size: 13px;
+  margin-top: 6px;
+  color: var(--warm-gray-light);
+}
+
+.about-content .section-eyebrow {
+  justify-content: flex-start;
+}
+
+.about-content .section-eyebrow::after {
+  display: none;
+}
+
+.about-content .section-title {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.about-text {
+  font-size: 15px;
+  color: var(--warm-gray);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(26, 24, 21, 0.1);
+}
+
+.about-stat .num {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--flame);
+  line-height: 1;
+}
+
+.about-stat .txt {
+  font-size: 13px;
+  color: var(--warm-gray);
+  margin-top: 8px;
+}
+
+/* ===== 资讯预览 ===== */
+.news-preview {
+  background: var(--cream-dark);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.news-card {
+  background: var(--white);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(26, 24, 21, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(26, 24, 21, 0.12);
+}
+
+.news-card-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+.news-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.news-card:hover .news-card-image img {
+  transform: scale(1.05);
+}
+
+.news-card-body {
+  padding: 24px;
+}
+
+.news-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: var(--warm-gray);
+}
+
+.news-card-category {
+  color: var(--flame);
+  font-weight: 500;
+}
+
+.news-card-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.news-card:hover .news-card-title {
+  color: var(--flame);
+}
+
+.news-card-excerpt {
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-more {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* ===== 联系 CTA ===== */
+.contact-cta {
+  background: var(--charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(200, 90, 42, 0.15), transparent 60%);
+}
+
+.contact-cta-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.contact-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.contact-cta p {
+  font-size: 16px;
+  color: var(--warm-gray-light);
+  margin-bottom: 36px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cream);
+  font-size: 15px;
+}
+
+.contact-info-item svg {
+  width: 20px;
+  height: 20px;
+  color: var(--flame-light);
+  flex-shrink: 0;
+}
+
+/* ===== 页脚 ===== */
+.footer {
+  background: #121110;
+  color: var(--warm-gray);
+  padding: 60px 32px 32px;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 16px;
+  max-width: 320px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 14px;
+  color: var(--warm-gray);
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: var(--flame-light);
+}
+
+.footer-bottom {
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+}
+
+/* ===== 资讯列表页 ===== */
+.page-header {
+  padding: 160px 32px 80px;
+  background: var(--charcoal);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top center, rgba(200, 90, 42, 0.12), transparent 60%);
+}
+
+.page-header-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: var(--warm-gray-light);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.news-list-section {
+  padding: 64px 32px 100px;
+  background: var(--cream);
+}
+
+.news-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.news-list-item {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  background: var(--white);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(26, 24, 21, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.news-list-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 32px rgba(26, 24, 21, 0.1);
+}
+
+.news-list-thumb {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+.news-list-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.news-list-item:hover .news-list-thumb img {
+  transform: scale(1.05);
+}
+
+.news-list-content {
+  padding: 28px 28px 28px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news-list-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: var(--warm-gray);
+}
+
+.news-list-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.news-list-item:hover .news-list-title {
+  color: var(--flame);
+}
+
+.news-list-excerpt {
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== 资讯详情页 ===== */
+.article-section {
+  padding: 64px 32px 100px;
+  background: var(--cream);
+}
+
+.article-container {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 4px;
+  padding: 56px 64px;
+  box-shadow: 0 4px 32px rgba(26, 24, 21, 0.08);
+}
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--flame);
+  margin-bottom: 32px;
+  cursor: pointer;
+  transition: gap 0.3s ease;
+}
+
+.article-back:hover {
+  gap: 10px;
+}
+
+.article-back svg {
+  width: 16px;
+  height: 16px;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: var(--warm-gray);
+}
+
+.article-category {
+  color: var(--flame);
+  font-weight: 500;
+}
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+
+.article-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-body h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 36px 0 16px;
+  padding-left: 14px;
+  border-left: 3px solid var(--flame);
+}
+
+.article-body h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 28px 0 12px;
+}
+
+.article-body p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #3A3632;
+  margin-bottom: 18px;
+}
+
+.article-body ul {
+  margin: 16px 0 20px;
+  padding-left: 24px;
+}
+
+.article-body ul li {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #3A3632;
+  margin-bottom: 8px;
+  list-style: disc;
+}
+
+.article-body blockquote {
+  margin: 24px 0;
+  padding: 20px 28px;
+  background: var(--cream);
+  border-left: 3px solid var(--flame);
+  font-size: 15px;
+  color: var(--brown);
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ===== 视图切换 ===== */
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 1024px) {
+  .product-grid,
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .craft-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--charcoal);
+    flex-direction: column;
+    padding: 24px 32px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(200, 90, 42, 0.2);
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-mobile-toggle {
+    display: block;
+  }
+  .product-grid,
+  .news-grid,
+  .craft-grid {
+    grid-template-columns: 1fr;
+  }
+  .news-list-item {
+    grid-template-columns: 1fr;
+  }
+  .news-list-content {
+    padding: 0 24px 24px;
+  }
+  .section {
+    padding: 64px 20px;
+  }
+  .article-container {
+    padding: 32px 24px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .contact-info {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 可配置区：未来租给厂家时只需修改这里 ===== -->
+<script>
+const SITE_CONFIG = {
+  brandName: '壁炉.cn',
+  manufacturerName: '暖炉智造',
+  phone: '400-888-6666',
+  email: 'contact@bilu.cn',
+  address: '上海市宝山区工业园区',
+  // 厂家官网跳转链接（租赁后替换为真实厂家网址）
+  manufacturerUrl: '#',
+  // 导航外部链接（留空则锚点跳转本站）
+  externalLinks: {
+    products: '#',
+    about: '#',
+    contact: '#'
+  }
+};
+</script>
+
+<!-- ===== 导航栏 ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#/" class="nav-logo">
+      <svg viewBox="0 0 32 32" fill="none">
+        <path d="M16 4C16 4 8 12 8 19C8 23.4 11.6 27 16 27C20.4 27 24 23.4 24 19C24 12 16 4 16 4Z" fill="url(#flameGrad)"/>
+        <path d="M16 14C16 14 12 17 12 20C12 22.2 13.8 24 16 24C18.2 24 20 22.2 20 20C20 17 16 14 16 14Z" fill="#F5F0E8" opacity="0.9"/>
+        <defs>
+          <linearGradient id="flameGrad" x1="16" y1="4" x2="16" y2="27">
+            <stop stop-color="#E07A3F"/>
+            <stop offset="1" stop-color="#A04520"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>壁炉.cn</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#/" data-nav="home">首页</a>
+      <a href="#/" data-nav="products" onclick="scrollToSection('products')">产品中心</a>
+      <a href="#/" data-nav="craft" onclick="scrollToSection('craft')">工艺优势</a>
+      <a href="#/" data-nav="about" onclick="scrollToSection('about')">关于我们</a>
+      <a href="#/news" data-nav="news">壁炉资讯</a>
+      <a href="#/" data-nav="contact" onclick="scrollToSection('contact')" class="nav-cta">咨询报价</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== 视图：首页 ===== -->
+<div id="view-home" class="view active">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('https://aka.doubaocdn.com/s/w3VnLA27wB')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">专业壁炉制造 ·  since 2008</div>
+      <h1 class="hero-title">让每一团火焰<br>都成为<em>温暖的艺术</em></h1>
+      <p class="hero-subtitle">十八年专注壁炉研发制造，从铸铁燃木到智能燃气，为千家万户打造安全、高效、美观的取暖体验。</p>
+      <div class="hero-buttons">
+        <a href="#/" onclick="scrollToSection('products')" class="btn btn-primary">浏览产品</a>
+        <a href="#/news" class="btn btn-outline">壁炉资讯</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- 产品中心 -->
+  <section class="section products" id="products">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">产品中心</div>
+        <h2 class="section-title">匠心铸造 · 全系壁炉</h2>
+        <p class="section-desc">覆盖燃木、燃气、电热三大品类，满足住宅、别墅、商业空间不同取暖需求</p>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://aka.doubaocdn.com/s/lWK7mfhlEN" alt="经典铸铁燃木壁炉">
+            <span class="product-tag">燃木系列</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">经典铸铁燃木壁炉</h3>
+            <p class="product-desc">采用高密度铸铁一体铸造，二次燃烧技术热效率达82%，复古雕花工艺，适合别墅与民宿。</p>
+            <div class="product-features">
+              <span>热效率82%</span>
+              <span>铸铁铸造</span>
+              <span>二次燃烧</span>
+            </div>
+            <a href="#/" class="product-link">查看详情
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://aka.doubaocdn.com/s/fNw1gCMFVa" alt="嵌入式燃气壁炉">
+            <span class="product-tag">燃气系列</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">嵌入式燃气壁炉</h3>
+            <p class="product-desc">线性火焰设计，天然气/液化气双燃料适配，智能温控远程操控，安装便捷，现代住宅首选。</p>
+            <div class="product-features">
+              <span>智能温控</span>
+              <span>双燃料</span>
+              <span>嵌入式</span>
+            </div>
+            <a href="#/" class="product-link">查看详情
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://aka.doubaocdn.com/s/Vui7Pfq6rZ" alt="现代电壁炉">
+            <span class="product-tag">电热系列</span>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">3D仿真电壁炉</h3>
+            <p class="product-desc">全息3D火焰技术，逼真木柴燃烧效果，零排放零安装，插电即用，适合公寓与办公空间。</p>
+            <div class="product-features">
+              <span>3D火焰</span>
+              <span>零排放</span>
+              <span>插电即用</span>
+            </div>
+            <a href="#/" class="product-link">查看详情
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 工艺优势 -->
+  <section class="section craft" id="craft">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">工艺优势</div>
+        <h2 class="section-title">十八年铸造 · 品质如一</h2>
+        <p class="section-desc">从原料到成品，每一道工序都经过严格把控</p>
+      </div>
+      <div class="craft-grid">
+        <div class="craft-item">
+          <svg class="craft-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M24 6L8 16v16l16 10 16-10V16L24 6z"/>
+            <path d="M24 6v40M8 16l16 10 16-10"/>
+          </svg>
+          <h3>高密度铸铁</h3>
+          <p>选用优质生铁，经1400度高温熔炼，一体砂型铸造，壁厚均匀，耐用三十年以上。</p>
+        </div>
+        <div class="craft-item">
+          <svg class="craft-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="24" cy="24" r="18"/>
+            <path d="M24 12v12l8 4"/>
+          </svg>
+          <h3>二次燃烧技术</h3>
+          <p>独创二次进风系统，让烟气再次充分燃烧，热效率提升至82%，颗粒物排放低于国标60%。</p>
+        </div>
+        <div class="craft-item">
+          <svg class="craft-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 36V20l12-8 12 8v16"/>
+            <path d="M20 36v-8h8v8"/>
+            <path d="M8 36h32"/>
+          </svg>
+          <h3>全程温控保护</h3>
+          <p>内置过热保护、缺氧保护、熄火保护三重安全装置，通过国家3C认证，使用更安心。</p>
+        </div>
+        <div class="craft-item">
+          <svg class="craft-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M24 8c-6 8-12 12-12 20a12 12 0 0024 0c0-8-6-12-12-20z"/>
+            <path d="M24 28c-3 4-6 6-6 10a6 6 0 0012 0c0-4-3-6-6-10z"/>
+          </svg>
+          <h3>定制化服务</h3>
+          <p>支持尺寸、颜色、燃料类型定制，专业团队上门勘测设计，从选型到安装一站式服务。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于我们 -->
+  <section class="section about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://aka.doubaocdn.com/s/9k6UHYTE9N" alt="壁炉制造工厂">
+          <div class="about-image-badge">
+            <div class="number">18+</div>
+            <div class="label">年专业制造经验</div>
+          </div>
+        </div>
+        <div class="about-content">
+          <div class="section-eyebrow">关于我们</div>
+          <h2 class="section-title">用铸造的态度<br>做温暖的事业</h2>
+          <p class="about-text">暖炉智造成立于2008年，是国内较早从事壁炉研发、生产与销售的专业制造企业。工厂占地12000平方米，拥有铸铁铸造、钣金加工、表面处理、总装检测四大车间，年产能超过20000台。</p>
+          <p class="about-text">我们坚持"安全第一、品质至上"的理念，所有产品均通过国家3C认证和欧盟CE认证，远销欧洲、北美、澳洲等20多个国家和地区。从传统燃木到智能燃气，我们始终以匠人精神，为全球用户打造温暖舒适的生活空间。</p>
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="num">20000+</div>
+              <div class="txt">年产能（台）</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">20+</div>
+              <div class="txt">出口国家</div>
+            </div>
+            <div class="about-stat">
+              <div class="num">50000+</div>
+              <div class="txt">服务家庭</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 资讯预览 -->
+  <section class="section news-preview" id="news-preview">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">壁炉资讯</div>
+        <h2 class="section-title">行业动态 · 选购指南</h2>
+        <p class="section-desc">汇聚壁炉行业最新资讯，助您做出明智选择</p>
+      </div>
+      <div class="news-grid" id="newsPreviewGrid"></div>
+      <div class="news-more">
+        <a href="#/news" class="btn btn-primary">查看更多资讯</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 CTA -->
+  <section class="section contact-cta" id="contact">
+    <div class="contact-cta-inner">
+      <h2>准备好为家里添一团温暖了吗？</h2>
+      <p>专业顾问一对一服务，免费上门勘测，量身定制壁炉方案</p>
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span id="contactPhone">400-888-6666</span>
+        </div>
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span id="contactEmail">contact@bilu.cn</span>
+        </div>
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="contactAddress">上海市宝山区工业园区</span>
+        </div>
+      </div>
+      <a href="#/" class="btn btn-primary" onclick="scrollToSection('products')">立即咨询报价</a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== 视图：资讯列表 ===== -->
+<div id="view-news" class="view">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1>壁炉资讯</h1>
+      <p>汇聚壁炉行业动态、选购指南、安装维护知识，助您深入了解壁炉世界</p>
+    </div>
+  </div>
+  <div class="news-list-section">
+    <div class="news-list" id="newsList"></div>
+  </div>
+</div>
+
+<!-- ===== 视图：资讯详情 ===== -->
+<div id="view-article" class="view">
+  <div class="article-section">
+    <div class="article-container" id="articleContainer"></div>
+  </div>
+</div>
+
+<!-- ===== 页脚 ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="color:var(--cream)">
+          <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+            <path d="M16 4C16 4 8 12 8 19C8 23.4 11.6 27 16 27C20.4 27 24 23.4 24 19C24 12 16 4 16 4Z" fill="url(#flameGrad2)"/>
+            <path d="M16 14C16 14 12 17 12 20C12 22.2 13.8 24 16 24C18.2 24 20 22.2 20 20C20 17 16 14 16 14Z" fill="#F5F0E8" opacity="0.9"/>
+            <defs>
+              <linearGradient id="flameGrad2" x1="16" y1="4" x2="16" y2="27">
+                <stop stop-color="#E07A3F"/>
+                <stop offset="1" stop-color="#A04520"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          壁炉.cn
+        </div>
+        <p>专注壁炉制造与行业资讯平台，为用户提供优质壁炉产品与专业知识，推动壁炉文化在中国的传播与发展。</p>
+      </div>
+      <div class="footer-col">
+        <h4>产品中心</h4>
+        <ul>
+          <li><a href="#/" onclick="scrollToSection('products')">燃木壁炉</a></li>
+          <li><a href="#/" onclick="scrollToSection('products')">燃气壁炉</a></li>
+          <li><a href="#/" onclick="scrollToSection('products')">电壁炉</a></li>
+          <li><a href="#/" onclick="scrollToSection('products')">定制服务</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>快速链接</h4>
+        <ul>
+          <li><a href="#/">首页</a></li>
+          <li><a href="#/" onclick="scrollToSection('about')">关于我们</a></li>
+          <li><a href="#/news">壁炉资讯</a></li>
+          <li><a href="#/" onclick="scrollToSection('contact')">联系我们</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>联系方式</h4>
+        <ul>
+          <li>电话：400-888-6666</li>
+          <li>邮箱：contact@bilu.cn</li>
+          <li>地址：上海市宝山区工业园区</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 壁炉.cn 版权所有</span>
+      <span>专业壁炉制造与资讯平台</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== 资讯数据 =====
+const NEWS_DATA = [
+  {
+    id: 'wood-vs-gas',
+    category: '选购指南',
+    date: '2026-08-25',
+    title: '燃木壁炉 vs 燃气壁炉：2026年如何选择最适合您的取暖方式',
+    excerpt: '面对市场上琳琅满目的壁炉产品，燃木和燃气究竟哪个更适合您？本文从使用成本、安装条件、维护难度等维度全面对比分析。',
+    image: 'https://aka.doubaocdn.com/s/uA4QwkUoEQ',
+    content: `
+      <p>随着冬季取暖需求的多样化，壁炉已从传统的取暖设备演变为家居生活的品质象征。燃木壁炉和燃气壁炉作为两大主流品类，各有优势，选择时需要综合考虑多方面因素。</p>
+      <h2>一、使用成本对比</h2>
+      <p>燃木壁炉的燃料成本相对较低，尤其是在木材资源丰富的地区。一立方米木柴的市场价格约在800-1500元之间，一个冬季的使用成本大约在2000-4000元。燃气壁炉则依赖天然气或液化气，按每月使用100小时计算，冬季燃气费用约在1500-3000元。</p>
+      <blockquote>从长期使用成本来看，燃木壁炉在木材易得的地区更具经济性；而在城市公寓中，燃气壁炉的便捷性更胜一筹。</blockquote>
+      <h2>二、安装条件要求</h2>
+      <h3>燃木壁炉</h3>
+      <ul>
+        <li>需要独立的烟囱管道，直径通常不小于150mm</li>
+        <li>周围需预留足够的防火间距（通常不小于50cm）</li>
+        <li>需要存放木柴的空间</li>
+        <li>更适合独栋别墅、联排住宅</li>
+      </ul>
+      <h3>燃气壁炉</h3>
+      <ul>
+        <li>需要接入天然气管道或液化气罐</li>
+        <li>可采用同轴烟道，对建筑结构要求较低</li>
+        <li>嵌入式设计节省空间</li>
+        <li>适合公寓、复式等多种住宅类型</li>
+      </ul>
+      <h2>三、维护与清洁</h2>
+      <p>燃木壁炉需要定期清理灰烬（建议每周一次），每年至少进行一次专业烟囱清扫，以防止积碳引发火灾。燃气壁炉的维护相对简单，每年检查一次燃气管道和燃烧器即可，日常几乎无需清洁。</p>
+      <h2>四、使用体验</h2>
+      <p>燃木壁炉能提供真实的火焰视觉和木柴燃烧的噼啪声，氛围感更强，是追求传统壁炉体验用户的首选。燃气壁炉则通过遥控或智能APP即可开关调温，即开即热，适合追求便捷的现代家庭。</p>
+      <h2>五、选购建议</h2>
+      <p>如果您拥有独栋住宅且追求真实的壁炉体验，燃木壁炉是不二之选；如果您住在公寓或注重便捷性，燃气壁炉更为合适。无论选择哪种，都务必选择通过国家3C认证的品牌产品，并由专业人员安装。</p>
+    `
+  },
+  {
+    id: 'install-guide',
+    category: '安装维护',
+    date: '2026-08-18',
+    title: '家用壁炉安装全流程指南：从选址到验收的十个关键步骤',
+    excerpt: '壁炉安装是一项系统工程，任何环节的疏漏都可能带来安全隐患。本文详细拆解家用壁炉安装的完整流程与注意事项。',
+    image: 'https://aka.doubaocdn.com/s/fNw1gCMFVa',
+    content: `
+      <p>壁炉的安全使用，从正确的安装开始。很多用户在购买壁炉后，对安装流程缺乏了解，导致后期出现排烟不畅、隔热不足等问题。本文将带您完整了解壁炉安装的十个关键步骤。</p>
+      <h2>第一步：现场勘测与方案设计</h2>
+      <p>安装前，专业技师会上门勘测，确认安装位置、墙体结构、楼板承重、烟道走向等关键条件。根据勘测结果制定个性化安装方案，包括壁炉型号选择、烟道设计、防火处理方案等。</p>
+      <h2>第二步：基础与承重处理</h2>
+      <p>燃木壁炉重量通常在150-400公斤之间，必须确保安装位置的楼板或地面能够承重。如承重不足，需加装钢结构支撑或浇筑混凝土基础。基础表面应铺设防火隔热板。</p>
+      <h2>第三步：防火隔热处理</h2>
+      <p>壁炉周围的墙体、地面必须进行防火处理：</p>
+      <ul>
+        <li>背面墙体：铺设防火石膏板或硅酸钙板，厚度不小于12mm</li>
+        <li>地面：铺设防火石板或金属隔热板，延伸至炉门前方至少50cm</li>
+        <li>侧面：与可燃物保持不小于50cm的安全距离</li>
+        <li>顶部：与天花板保持不小于100cm的距离</li>
+      </ul>
+      <h2>第四步：烟道系统安装</h2>
+      <p>烟道是壁炉的"呼吸系统"，必须严格按照规范安装。推荐使用双层不锈钢保温烟道，内径不小于150mm。烟道应尽量垂直走向，减少弯头（全程不超过2个90度弯头），出口需高出屋顶60cm以上，并安装防雨帽和防鸟网。</p>
+      <h2>第五步：壁炉就位与固定</h2>
+      <p>将壁炉平稳放置在预设位置，使用水平仪确保前后左右水平。壁炉与烟道接口处必须使用耐高温密封胶密封，防止烟气泄漏。固定脚螺栓需拧紧，确保壁炉不晃动。</p>
+      <h2>第六步：密封与连接测试</h2>
+      <p>所有连接部位完成密封后，进行负压测试：关闭炉门和进风口，在烟道出口处使用负压仪检测，确保系统密封性良好，无泄漏点。</p>
+      <h2>第七步：首次点火调试</h2>
+      <p>安装完成后进行首次点火测试，观察火焰燃烧状态、排烟效果、炉体表面温度等指标。正常燃烧时，炉门玻璃应保持清晰，无明显烟气倒灌现象。</p>
+      <h2>第八步：安全装置检查</h2>
+      <p>逐一检查过热保护、缺氧保护、熄火保护等安全装置是否正常工作。燃气壁炉还需检测燃气管道密封性，使用检漏仪确认无燃气泄漏。</p>
+      <h2>第九步：用户使用培训</h2>
+      <p>安装人员向用户详细讲解壁炉的正确使用方法、日常维护要点、安全注意事项和常见故障处理。确保用户能够安全、正确地操作壁炉。</p>
+      <h2>第十步：验收与交付</h2>
+      <p>所有测试通过后，双方签署安装验收单，用户留存产品合格证、安装记录、保修卡等文件。至此，壁炉安装工程正式交付使用。</p>
+      <blockquote>温馨提示：壁炉安装必须由具备资质的专业人员进行，切勿自行安装。正确的安装是安全使用的前提，切勿在这一环节节省成本。</blockquote>
+    `
+  },
+  {
+    id: 'maintenance-tips',
+    category: '安装维护',
+    date: '2026-08-10',
+    title: '壁炉日常维护与清洁手册：延长使用寿命的七个好习惯',
+    excerpt: '正确的日常维护不仅能让壁炉保持最佳工作状态，更能有效延长使用寿命、降低安全风险。',
+    image: 'https://aka.doubaocdn.com/s/lWK7mfhlEN',
+    content: `
+      <p>一台品质优良的壁炉，如果维护得当，可以使用三十年以上。但如果忽视日常维护，不仅取暖效率会下降，还可能带来安全隐患。以下是七个关键的日常维护习惯。</p>
+      <h2>习惯一：使用干燥的木柴</h2>
+      <p>燃木壁炉必须使用含水率低于20%的干燥木柴。湿木柴燃烧不充分，会产生大量焦油和积碳，附着在烟道内壁，不仅降低热效率，还可能引发烟道火灾。建议将木柴在通风干燥处存放至少6个月以上再使用。</p>
+      <blockquote>判断木柴是否干燥的简单方法：两根木柴相互敲击，发出清脆的"咚咚"声即为干燥木柴；如果声音沉闷，则说明含水率过高。</blockquote>
+      <h2>习惯二：定期清理灰烬</h2>
+      <p>建议每周清理一次炉底灰烬，但不要完全清空——保留约2-3cm厚的灰层有助于保温和引燃。清理时务必等灰烬完全冷却（至少冷却24小时），使用金属容器盛装，远离可燃物。</p>
+      <h2>习惯三：保持炉门玻璃清洁</h2>
+      <p>炉门玻璃上的积碳会影响观赏火焰的效果。可在壁炉冷却后，使用专用玻璃清洁剂或湿润的报纸蘸取少量灰烬擦拭，效果显著。避免在玻璃高温时清洁，以免冷热不均导致破裂。</p>
+      <h2>习惯四：每年专业烟道清扫</h2>
+      <p>每年采暖季结束后，务必请专业人员对烟道进行彻底清扫，清除内壁积碳和焦油。积碳厚度超过3mm时就有引发烟道火灾的风险，切勿忽视。</p>
+      <h2>习惯五：检查密封件状态</h2>
+      <p>炉门的密封绳（玻纤绳）在长期高温下会逐渐老化变硬，导致密封不严。每两年检查一次，如发现变硬、断裂或弹性下降，应及时更换。密封不良会导致进风不可控，燃烧效率下降。</p>
+      <h2>习惯六：正确的点火与熄火方式</h2>
+      <p>点火时采用"顶燃法"：先放大块木柴，再放中块，最上面放引火物，从顶部点燃。这种方式燃烧更充分，烟气更少。熄火时不要用水浇灭，应关闭进风口让其自然熄灭。</p>
+      <h2>习惯七：非使用期的保养</h2>
+      <p>夏季不使用时，应将壁炉内部清洁干净，炉门微留缝隙保持通风干燥，防止内部生锈。可在炉内放置干燥剂。燃气壁炉在非使用期应关闭燃气总阀。</p>
+      <h2>维护周期速查表</h2>
+      <ul>
+        <li>每次使用后：检查炉门是否关好，确认火焰完全熄灭</li>
+        <li>每周：清理炉底灰烬，擦拭炉门玻璃</li>
+        <li>每月：检查烟道出口是否通畅，有无鸟巢或堵塞</li>
+        <li>每季度：检查密封绳状态，紧固松动的螺丝</li>
+        <li>每年：专业烟道清扫，全面安全检测</li>
+      </ul>
+    `
+  },
+  {
+    id: 'electric-fireplace',
+    category: '产品评测',
+    date: '2026-07-28',
+    title: '2026年电壁炉选购指南：3D仿真火焰技术到底值不值得买？',
+    excerpt: '电壁炉因其零排放、易安装的特点受到城市用户青睐。但市面上的电壁炉效果参差不齐，如何辨别真正的3D仿真技术？',
+    image: 'https://aka.doubaocdn.com/s/Vui7Pfq6rZ',
+    content: `
+      <p>近年来，电壁炉市场增长迅速，尤其是在公寓和办公空间中，电壁炉凭借安装简便、零排放、使用安全等优势，成为越来越多用户的选择。但市面上的电壁炉价格从几百元到上万元不等，效果差异巨大。本文帮您理清选购思路。</p>
+      <h2>一、电壁炉的火焰技术分级</h2>
+      <h3>第一代：灯光反射式</h3>
+      <p>通过灯泡照射旋转的反光片，在幕布上投射出火焰影像。成本低，但效果假，火焰缺乏层次感，近距离观看容易识破。价格通常在500-1500元。</p>
+      <h3>第二代：LED投影式</h3>
+      <p>使用LED光源配合特殊的火焰纹理胶片，投影效果比第一代更真实。但火焰形态固定，缺少动态变化，仍有"屏幕感"。价格在1500-4000元。</p>
+      <h3>第三代：3D全息仿真式</h3>
+      <p>采用多层雾化+LED光源+动态反射技术，火焰有真实的立体感和动态变化，配合仿真木柴和炭火效果，几乎可以以假乱真。部分高端产品还配有水蒸气"烟雾"效果。价格在4000-15000元。</p>
+      <blockquote>选购建议：如果只是作为装饰偶尔使用，第二代产品足够；如果追求真实感且长期使用，建议选择第三代3D仿真产品。</blockquote>
+      <h2>二、取暖功能的选择</h2>
+      <p>电壁炉的取暖功能通常采用PTC陶瓷加热，功率在1500W-2500W之间。需要注意的是，电壁炉的取暖范围有限，通常只能覆盖10-20平方米的空间，更适合作为辅助取暖，不能替代主供暖系统。</p>
+      <p>高端产品配备温控器和定时功能，可以设定目标温度和运行时间，使用更节能。部分产品还支持WiFi远程控制，可通过手机APP提前开启预热。</p>
+      <h2>三、安装方式与尺寸</h2>
+      <p>电壁炉主要有三种安装方式：</p>
+      <ul>
+        <li><strong>独立式</strong>：即插即用，无需安装，可随意移动，适合租房用户</li>
+        <li><strong>嵌入式</strong>：需要在墙面预留安装位，效果更美观，适合装修时规划</li>
+        <li><strong>壁挂式</strong>：挂在墙面上，节省空间，适合小户型</li>
+      </ul>
+      <p>尺寸选择上，应根据墙面宽度和观看距离来定。一般来说，观看距离在2-3米时，选择80-100cm宽的产品较为合适。</p>
+      <h2>四、安全与品质要点</h2>
+      <p>选购时务必确认产品通过国家3C认证，重点关注以下安全功能：</p>
+      <ul>
+        <li>过热自动断电保护</li>
+        <li>倾倒自动断电保护</li>
+        <li>儿童锁功能</li>
+        <li>加热体表面防烫设计</li>
+      </ul>
+      <p>另外，建议选择有良好售后保障的品牌产品，电壁炉的LED光源和加热元件属于损耗件，需要品牌提供可靠的维修和更换服务。</p>
+    `
+  },
+  {
+    id: 'industry-trend',
+    category: '行业动态',
+    date: '2026-07-15',
+    title: '2026中国壁炉行业趋势报告：智能化与低碳化成为发展主线',
+    excerpt: '随着消费升级和双碳政策推进，中国壁炉行业正经历深刻变革。本文基于行业数据，解读未来发展趋势。',
+    image: 'https://aka.doubaocdn.com/s/9k6UHYTE9N',
+    content: `
+      <p>中国壁炉市场近年来保持稳健增长，2025年市场规模已突破80亿元，预计2026年将达到95亿元。在消费升级、双碳政策和技术进步的多重驱动下，行业正呈现出几个明显的发展趋势。</p>
+      <h2>趋势一：智能化成为标配</h2>
+      <p>越来越多的壁炉产品开始搭载智能控制系统。通过WiFi连接和手机APP，用户可以远程控制壁炉的开关、温度、火焰大小，甚至设定每周的运行时间表。部分高端产品还支持语音控制，可与天猫精灵、小爱同学等智能音箱联动。</p>
+      <p>据行业调研数据，2025年搭载智能控制功能的壁炉产品占比已达35%，预计2026年将超过50%。智能化不再是高端产品的专属，而是逐渐成为中高端产品的标配。</p>
+      <h2>趋势二：低碳环保技术加速应用</h2>
+      <p>在"双碳"目标背景下，壁炉行业的环保技术升级加速。燃木壁炉方面，二次燃烧、三次燃烧技术不断成熟，颗粒物排放较传统产品降低60%以上，部分产品已达到欧洲EcoDesign 2022标准。</p>
+      <p>燃气壁炉方面，低氮燃烧技术得到推广，氮氧化物排放量大幅降低。电壁炉则凭借零排放的天然优势，市场占比持续提升，2025年已达到总销量的28%。</p>
+      <h2>趋势三：定制化需求增长</h2>
+      <p>消费者对壁炉的需求不再局限于取暖功能，更多地将其视为家居设计的一部分。定制化壁炉的需求显著增长，包括尺寸定制、颜色定制、装饰面定制等。据统计，2025年定制化壁炉订单同比增长45%。</p>
+      <blockquote>壁炉正在从"取暖设备"向"家居艺术品"转变，设计感和个性化成为消费者选购的重要考量因素。</blockquote>
+      <h2>趋势四：线上渠道占比提升</h2>
+      <p>传统壁炉销售以线下门店和工程渠道为主，但近年来线上渠道增长迅速。2025年线上销售额占比已达22%，较2023年提升了12个百分点。抖音、小红书等内容平台成为消费者了解和选购壁炉的重要入口。</p>
+      <h2>趋势五：服务体系完善</h2>
+      <p>随着市场成熟，壁炉企业的服务意识不断增强。从售前的免费上门勘测、方案设计，到售中的专业安装，再到售后的定期维护、烟道清扫，一站式服务体系正在成为品牌竞争的核心要素。</p>
+      <h2>未来展望</h2>
+      <p>预计未来3-5年，中国壁炉市场将保持10%-15%的年增长率。随着南方供暖需求的释放、别墅和中高端住宅市场的稳定发展，以及壁炉文化的进一步普及，行业发展空间广阔。能够在智能化、环保化、服务化方面提前布局的企业，将在未来的竞争中占据优势地位。</p>
+    `
+  },
+  {
+    id: 'safety-guide',
+    category: '安全知识',
+    date: '2026-07-02',
+    title: '壁炉安全使用必读：避免火灾和一氧化碳中毒的关键要点',
+    excerpt: '壁炉在带来温暖的同时也存在安全风险。掌握这些安全知识，才能安心享受壁炉带来的舒适与温暖。',
+    image: 'https://aka.doubaocdn.com/s/w3VnLA27wB',
+    content: `
+      <p>壁炉是温暖的象征，但如果使用不当，也可能成为安全隐患。据统计，每年因壁炉使用不当引发的火灾和一氧化碳中毒事件时有发生。掌握以下安全知识，是安心使用壁炉的前提。</p>
+      <h2>一、火灾预防要点</h2>
+      <h3>1. 保持安全距离</h3>
+      <p>壁炉周围1米范围内不得放置任何可燃物，包括窗帘、沙发、书籍、地毯、圣诞树等。壁炉前方应铺设防火隔热板，防止火星溅出引燃地面材料。</p>
+      <h3>2. 正确使用防火屏</h3>
+      <p>燃木壁炉在燃烧时必须安装防火屏（金属网或玻璃门），防止火星和灰烬溅出。离开房间或睡觉时，务必确认防火屏已关闭。</p>
+      <h3>3. 不要过度燃烧</h3>
+      <p>不要一次性放入过多木柴，也不要燃烧垃圾、废纸、涂漆木材、胶合板等。这些物质燃烧时可能产生高温火焰或有毒气体，增加火灾风险。</p>
+      <h3>4. 定期清扫烟道</h3>
+      <p>烟道内积累的 creosote（木焦油）是引发烟道火灾的主要原因。每年至少进行一次专业烟道清扫，如使用频繁则应增加清扫频次。当发现烟道内积碳厚度超过3mm时，必须立即清扫。</p>
+      <blockquote>烟道火灾的典型征兆：从烟囱口冒出大量火花、发出隆隆声响、烟道外壁异常发烫。一旦发生，应立即关闭壁炉所有进风口，拨打火警电话，切勿爬上屋顶浇水。</blockquote>
+      <h2>二、一氧化碳中毒预防</h2>
+      <p>一氧化碳是一种无色无味的有毒气体，壁炉燃烧不充分或排烟不畅时容易产生。预防措施包括：</p>
+      <ul>
+        <li>安装一氧化碳报警器：建议在壁炉所在房间和卧室各安装一个，每月测试一次，每年更换电池</li>
+        <li>确保烟道通畅：定期检查烟道有无堵塞、脱落、裂缝，鸟类筑巢是常见的堵塞原因</li>
+        <li>保持适当通风：燃烧时保持房间有微量新风进入，避免完全密闭</li>
+        <li>不要在密闭空间使用：切勿在卧室、浴室等密闭空间长时间使用燃木或燃气壁炉</li>
+      </ul>
+      <p>一氧化碳中毒的早期症状包括头痛、头晕、恶心、乏力。一旦出现这些症状，应立即关闭壁炉、打开门窗通风、到室外呼吸新鲜空气，严重时及时就医。</p>
+      <h2>三、燃气壁炉特别注意事项</h2>
+      <ul>
+        <li>安装燃气泄漏报警器，定期检查燃气管道接口</li>
+        <li>闻到燃气异味时，立即关闭燃气总阀，打开门窗，切勿开关任何电器（包括打电话），到室外安全位置后报警</li>
+        <li>燃气壁炉必须由专业人员安装和维修，切勿自行拆卸</li>
+        <li>使用前确认烟道出口无遮挡，排气正常</li>
+      </ul>
+      <h2>四、儿童与宠物安全</h2>
+      <p>壁炉表面在使用时温度很高，可能造成烫伤。有儿童或宠物的家庭应注意：</p>
+      <ul>
+        <li>在壁炉周围设置防护栏，防止儿童触碰</li>
+        <li>教育儿童不要靠近壁炉，不要在壁炉周围玩耍</li>
+        <li>工具（火钳、火钩等）应放在儿童够不到的地方</li>
+        <li>宠物窝应远离壁炉，避免烫伤</li>
+      </ul>
+      <h2>五、外出与睡前检查</h2>
+      <p>离开家或睡觉前，务必完成以下检查：</p>
+      <ul>
+        <li>确认壁炉火焰已完全熄灭或处于安全的低燃烧状态</li>
+        <li>关闭炉门和防火屏</li>
+        <li>确认灰烬已完全冷却并存放在金属容器中</li>
+        <li>燃气壁炉关闭燃气阀</li>
+        <li>检查一氧化碳报警器工作正常</li>
+      </ul>
+      <p>安全是享受壁炉温暖的前提。请将本文分享给家中每一位成员，让每个人都了解壁炉的安全使用知识。</p>
+    `
+  }
+];
+
+// ===== 路由控制 =====
+function router() {
+  const hash = window.location.hash || '#/';
+  const views = document.querySelectorAll('.view');
+  const navLinks = document.querySelectorAll('.nav-links a[data-nav]');
+
+  views.forEach(v => v.classList.remove('active'));
+  navLinks.forEach(a => a.classList.remove('active'));
+
+  if (hash === '#/' || hash === '') {
+    document.getElementById('view-home').classList.add('active');
+    document.querySelector('[data-nav="home"]').classList.add('active');
+    window.scrollTo(0, 0);
+  } else if (hash === '#/news') {
+    document.getElementById('view-news').classList.add('active');
+    document.querySelector('[data-nav="news"]').classList.add('active');
+    renderNewsList();
+    window.scrollTo(0, 0);
+  } else if (hash.startsWith('#/news/')) {
+    const id = hash.replace('#/news/', '');
+    document.getElementById('view-article').classList.add('active');
+    document.querySelector('[data-nav="news"]').classList.add('active');
+    renderArticle(id);
+    window.scrollTo(0, 0);
+  }
+
+  // 关闭移动端菜单
+  document.getElementById('navLinks').classList.remove('open');
+}
+
+window.addEventListener('hashchange', router);
+
+// ===== 渲染资讯预览（首页3篇） =====
+function renderNewsPreview() {
+  const grid = document.getElementById('newsPreviewGrid');
+  const preview = NEWS_DATA.slice(0, 3);
+  grid.innerHTML = preview.map(item => `
+    <div class="news-card" onclick="location.hash='#/news/${item.id}'">
+      <div class="news-card-image">
+        <img src="${item.image}" alt="${item.title}">
+      </div>
+      <div class="news-card-body">
+        <div class="news-card-meta">
+          <span class="news-card-category">${item.category}</span>
+          <span>${item.date}</span>
+        </div>
+        <h3 class="news-card-title">${item.title}</h3>
+        <p class="news-card-excerpt">${item.excerpt}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== 渲染资讯列表 =====
+function renderNewsList() {
+  const list = document.getElementById('newsList');
+  list.innerHTML = NEWS_DATA.map(item => `
+    <div class="news-list-item" onclick="location.hash='#/news/${item.id}'">
+      <div class="news-list-thumb">
+        <img src="${item.image}" alt="${item.title}">
+      </div>
+      <div class="news-list-content">
+        <div class="news-list-meta">
+          <span class="news-card-category">${item.category}</span>
+          <span>${item.date}</span>
+        </div>
+        <h3 class="news-list-title">${item.title}</h3>
+        <p class="news-list-excerpt">${item.excerpt}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== 渲染文章详情 =====
+function renderArticle(id) {
+  const article = NEWS_DATA.find(a => a.id === id);
+  const container = document.getElementById('articleContainer');
+  if (!article) {
+    container.innerHTML = '<p>文章不存在</p>';
+    return;
+  }
+  container.innerHTML = `
+    <a class="article-back" onclick="location.hash='#/news'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      返回资讯列表
+    </a>
+    <div class="article-meta">
+      <span class="article-category">${article.category}</span>
+      <span>${article.date}</span>
+    </div>
+    <h1 class="article-title">${article.title}</h1>
+    <div class="article-image">
+      <img src="${article.image}" alt="${article.title}">
+    </div>
+    <div class="article-body">${article.content}</div>
+  `;
+}
+
+// ===== 滚动到指定区块 =====
+function scrollToSection(id) {
+  const doScroll = () => {
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.pageYOffset - 72;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  };
+  if (window.location.hash !== '#/' && window.location.hash !== '') {
+    window.location.hash = '#/';
+    setTimeout(doScroll, 100);
+  } else {
+    doScroll();
+  }
+}
+
+// ===== 移动端菜单 =====
+function toggleMobileNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// ===== 应用配置 =====
+function applyConfig() {
+  document.getElementById('contactPhone').textContent = SITE_CONFIG.phone;
+  document.getElementById('contactEmail').textContent = SITE_CONFIG.email;
+  document.getElementById('contactAddress').textContent = SITE_CONFIG.address;
+}
+
+// ===== 初始化 =====
+document.addEventListener('DOMContentLoaded', function() {
+  applyConfig();
+  renderNewsPreview();
+  router();
+});
+</script>
+
+</body>
+</html>
