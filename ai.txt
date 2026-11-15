@@ -1,0 +1,49 @@
+# AI Index for 壁炉.cn
+# OpenAI-compatible AI site index
+
+site_name: 壁炉.cn
+brand: 暖炉智造
+description: 中国专业壁炉制造与资讯平台，18年行业经验，提供燃木壁炉、燃气壁炉、电壁炉及定制服务
+founded: 2008
+headquarters: 上海市宝山区工业园区
+
+# 核心业务
+products:
+  - 铸铁燃木壁炉 (热效率82%，二次燃烧)
+  - 嵌入式燃气壁炉 (智能温控，双燃料)
+  - 电壁炉 (750W/1500W多档，仿真火焰)
+  - 定制壁炉 (上门勘测，按需生产)
+
+services:
+  - 免费上门勘测
+  - 方案定制设计
+  - 安装指导
+  - 售后维护
+
+# 内容主题分类
+topics:
+  - 选购指南: 功率选型、价格预算、尺寸匹配
+  - 安装技术: 开孔预留、挂墙安装、烟囱高度
+  - 安全知识: 表面温度、一氧化碳防护、防烫措施
+  - 维护保养: 烟囱清理、设备检查、故障排查
+  - 产品评测: 噪音测试、热效率对比、能耗分析
+
+# SEO关键词
+keywords:
+  - 主词: 壁炉、燃木壁炉、燃气壁炉、电壁炉
+  - 长尾: 壁炉价格、壁炉安装、壁炉品牌、壁炉选型
+  - 品牌词: 暖炉智造、壁炉.cn
+
+# 站点URL结构
+urls:
+  homepage: https://壁炉.cn/
+  news: https://壁炉.cn/news/index.html
+  sitemap: https://壁炉.cn/sitemap.xml
+  llms: https://壁炉.cn/llms.txt
+  ai_index: https://壁炉.cn/ai.txt
+
+# 联系方式
+contact:
+  phone: 17652523536
+  email: contact@bilu.cn
+  address: 上海市宝山区工业园区
